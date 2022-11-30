@@ -14,7 +14,7 @@ import {Component, ɵisListLikeIterable} from '@angular/core';
     `
 })
 
-export class contadorComponent{
+export class ContadorComponent{
     title = 'Contador App';
     numero: number = 10;
     base: number = 7;
