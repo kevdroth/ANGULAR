@@ -10,7 +10,6 @@ import { PaisService } from '../../services/pais.service';
   styles: [],
 })
 export class VerPaisComponent implements OnInit {
-
   pais!: Country;
 
   constructor(
@@ -19,16 +18,12 @@ export class VerPaisComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
     this.activatedRoute.params
       .pipe(
-        switchMap(({id}) => this.paisService.getPaisPorAlpha(id)),
+        switchMap(({ id }) => this.paisService.getPaisPorAlpha(id)),
         tap(console.log)
       )
-      .subscribe(pais => {
-        this.pais = pais;
-      })
-
+      .subscribe( pais => this.pais = pais[0] );
 
     /* this.activatedRoute.params.subscribe(({ id }) => {
       this.paisService.getPaisPorAlpha(id)
