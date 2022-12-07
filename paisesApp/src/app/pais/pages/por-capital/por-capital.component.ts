@@ -18,7 +18,6 @@ export class PorCapitalComponent {
   buscar(termino: string){
     this.hayError = false;
     this.termino = termino;
-    console.log(this.termino);
   
     this.paisService.buscarCapital(this.termino)
       .subscribe( (paises) => {
